@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info, Mail, Github } from 'lucide-react';
+import { Info, Mail } from 'lucide-react';
 
 export const CreditsSection = () => {
   return (
