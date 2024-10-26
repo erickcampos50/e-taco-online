@@ -6,9 +6,9 @@ export default {
     howToUse: {
       title: 'Como Usar o Sistema',
       profile: {
-        title: 'Configurando um Perfil',
+        title: 'Exemplo de preenchimento das metas nutricionais',
         description:
-          'Selecione um perfil de paciente (ex: "Homem Adulto", "Adolescente", "Criança") da lista. O sistema carregará automaticamente as metas nutricionais apropriadas para o perfil selecionado.',
+          'Selecione um perfil de paciente (ex: "Homem Adulto", "Adolescente", "Criança") da lista para ver exemplos de preenchimento. Esses dados não são recomendações nutricionais reais, mas apenas uma forma de instruir sobre o preenchimento do sistema. Consulte um profissional.',
       },
       goals: {
         title: 'Adicionando e Modificando Metas Nutricionais',
@@ -83,7 +83,7 @@ export default {
     import: 'Importar',
     export: 'Exportar',
     exportCSV: 'Exportar CSV',
-    report: 'Relatório',
+    report: 'Relatório PDF',
     loading: 'Carregando...',
     field: 'Campo',
     value: 'Valor',
