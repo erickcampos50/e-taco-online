@@ -132,18 +132,6 @@ const App: React.FC = () => {
 
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <InstructionsSection />
-
-          <UserInfo
-            nutritionist={mealPlan.nutritionist!}
-            patient={mealPlan.patient!}
-            onUpdate={updateUserInfo}
-          />
-
-          <ProfileSelector onProfileSelect={updateGoals} />
-
-          <NutritionSummaryComponent summary={nutritionSummary} />
-
           <NutritionGoals goals={mealPlan.goals} onUpdate={updateGoals} />
 
           <div className="space-y-6">
@@ -164,6 +152,19 @@ const App: React.FC = () => {
             <Utensils size={20} />
             <span>Montar/Incluir refeições do paciente</span>
           </button>
+
+          <NutritionSummaryComponent summary={nutritionSummary} />
+          
+          <InstructionsSection />
+
+          <UserInfo
+            nutritionist={mealPlan.nutritionist!}
+            patient={mealPlan.patient!}
+            onUpdate={updateUserInfo}
+          />
+
+          <ProfileSelector onProfileSelect={updateGoals} />
+
 
           <CreditsSection />
         </div>

@@ -54,8 +54,8 @@ export const Header = ({ mealPlan }: HeaderProps) => {
           <div className="flex items-center space-x-3">
             <Database size={32} className="text-primary-200" />
             <div>
-              <h1 className="text-2xl font-bold">e-TACO</h1>
-              <p className="text-xs text-primary-200">Tabela Brasileira de Composição de Alimentos ao seu alcance</p>
+              <h1 className="text-2xl font-bold">e-TACO 4ª Edição</h1>
+              <p className="text-xs text-primary-200">Tabela Brasileira de Composição de Alimentos facilitada para estudantes</p>
             </div>
           </div>
           
