@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Database } from 'lucide-react';
+import { Database, DatabaseBackup, Utensils } from 'lucide-react';
 import { Header } from './components/Header';
 import { MealSection } from './components/MealSection';
 import { NutritionGoals } from './components/NutritionGoals';
@@ -161,8 +161,8 @@ const App: React.FC = () => {
             onClick={addMeal}
             className="mt-6 w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors flex items-center justify-center space-x-2"
           >
-            <Database size={20} />
-            <span>Adicionar Refeição</span>
+            <Utensils size={20} />
+            <span>Montar/Incluir refeições do paciente</span>
           </button>
 
           <CreditsSection />

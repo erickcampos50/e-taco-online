@@ -1,6 +1,6 @@
 // src/components/MealSection.tsx
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Plus,
   Trash2,
@@ -23,7 +23,7 @@ interface MealSectionProps {
   onDelete: () => void;
 }
 
-const units = {
+const units: { [key: string]: string } = {
   energy: 'kcal',
   protein: 'g',
   lipids: 'g',
@@ -58,12 +58,17 @@ export const MealSection: React.FC<MealSectionProps> = ({
   const [showDetails, setShowDetails] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
 
+  // Ordena os alimentos alfabeticamente pela descrição
+  const sortedFoods = useMemo(() => {
+    return [...foods].sort((a, b) => a.description.localeCompare(b.description));
+  }, []);
+
   const addFood = () => {
     onUpdate({
       ...meal,
       items: [
         ...meal.items,
-        { foodId: foods[0].id, quantity: 100, unit: 'grama' },
+        { foodId: sortedFoods[0].id, quantity: 100, unit: 'grama' },
       ],
     });
   };
@@ -99,7 +104,7 @@ export const MealSection: React.FC<MealSectionProps> = ({
           <div key={nutrient} className="flex items-center">
             <span className="font-medium">{t(`nutrients.${nutrient}`)}:</span>
             <span className="ml-1">
-              {Math.round(mealNutrients[nutrient] || 0)}
+              {Math.round(mealNutrients[nutrient as keyof typeof mealNutrients] || 0)}
               {units[nutrient]}
             </span>
           </div>
@@ -138,7 +143,7 @@ export const MealSection: React.FC<MealSectionProps> = ({
           <div key={nutrient} className="flex items-center">
             <span className="font-medium">{t(`nutrients.${nutrient}`)}:</span>
             <span className="ml-1">
-              {(mealNutrients[nutrient] || 0).toFixed(1)}
+              {(mealNutrients[nutrient as keyof typeof mealNutrients] || 0).toFixed(1)}
               {units[nutrient]}
             </span>
           </div>
@@ -227,7 +232,7 @@ export const MealSection: React.FC<MealSectionProps> = ({
       {/* Lista de Itens da Refeição */}
       <div className="mt-4 space-y-4">
         {meal.items.map((item, index) => {
-          const food = foods.find((f) => f.id === item.foodId);
+          const food = sortedFoods.find((f) => f.id === item.foodId);
           if (!food) return null;
 
           const itemNutrients = calculateMealNutrients({
@@ -241,7 +246,7 @@ export const MealSection: React.FC<MealSectionProps> = ({
               className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full"
             >
               <AutocompleteCombobox
-                options={foods}
+                options={sortedFoods}
                 value={item.foodId}
                 onChange={(foodId) => updateFoodItem(index, { foodId })}
               />

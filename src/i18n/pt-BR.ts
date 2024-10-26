@@ -122,10 +122,10 @@ export default {
     info: 'Informações do Paciente',
   },
   profile: {
-    title: 'Perfil do Paciente',
+    title: 'Exemplos de metas',
     select: 'Selecione um perfil...',
     description:
-      'Selecione um perfil para definir automaticamente as metas nutricionais recomendadas',
+      'Selecione um perfil para definir automaticamente as metas nutricionais. Estes valores não são reais, um profissional deve ser consultado.',
     types: {
       adult_man: 'Homem Adulto',
       adult_woman: 'Mulher Adulta',
@@ -159,7 +159,7 @@ export default {
     dinner: 'Jantar',
     snack: 'Lanche',
     addMeal: 'Adicionar Refeição',
-    addFood: 'Adicionar Alimento',
+    addFood: 'Clique para adicionar alimento à refeição',
     portion: 'Porção',
     food: 'Alimento',
     editName: 'Editar nome',
@@ -186,6 +186,7 @@ export default {
   nutrition: {
     goals: {
       title: 'Metas Nutricionais',
+      instruction:'Informe a meta, se é um valor máximo ou mínimo e a tolerância % da meta',
       addGoal: 'Adicionar Meta',
       selectNutrient: 'Selecione um Nutriente',
       min: 'Mínimo',

@@ -1,3 +1,5 @@
+// src/components/NutritionGoals.tsx
+
 import React, { useState } from 'react';
 import { Plus, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
@@ -50,7 +52,12 @@ export const NutritionGoals = ({ goals, onUpdate }: NutritionGoalsProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">{t('nutrition.goals.title')}</h2>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800">{t('nutrition.goals.title')}</h2>
+          <p className="text-sm text-gray-500">
+            {t('nutrition.goals.instruction')}
+          </p>
+        </div>
         {unusedNutrients.length > 0 && (
           <div className="relative">
             <button
@@ -122,6 +129,7 @@ export const NutritionGoals = ({ goals, onUpdate }: NutritionGoalsProps) => {
                 min="0"
               />
               <div className="flex items-center space-x-2">
+                <span className="text-gray-500">±</span> {/* Adiciona o texto "±" */}
                 <input
                   type="number"
                   value={goal.tolerance}
