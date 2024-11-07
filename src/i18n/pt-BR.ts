@@ -122,10 +122,10 @@ export default {
     info: 'Informações do Paciente',
   },
   profile: {
-    title: 'Exemplos de metas',
-    select: 'Selecione um perfil...',
+    title: 'Exemplos de uso',
+    select: 'Opções',
     description:
-      'Selecione um perfil para definir automaticamente as metas nutricionais. Estes valores não são reais, um profissional deve ser consultado.',
+      'Selecione um perfil para ver um exemplo de preenchimento das metas nutricionais. Estes valores não são reais, um profissional deve ser consultado.',
     types: {
       adult_man: 'Homem Adulto',
       adult_woman: 'Mulher Adulta',
@@ -186,7 +186,7 @@ export default {
   nutrition: {
     goals: {
       title: 'Metas Nutricionais',
-      instruction:'Informe a meta, se é um valor máximo ou mínimo e a tolerância % da meta',
+      instruction:'Informe as metas nutricionais que deseja usar, se é um valor máximo ou mínimo e a tolerância % (opcional)',
       addGoal: 'Adicionar Meta',
       selectNutrient: 'Selecione um Nutriente',
       min: 'Mínimo',

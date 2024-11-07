@@ -147,11 +147,12 @@ const App: React.FC = () => {
 
           <button
             onClick={addMeal}
-            className="mt-6 w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors flex items-center justify-center space-x-2"
+            className="mt-6 w-full bg-gradient-to-r from-red-600 to-purple-600 text-white py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out flex items-center justify-center space-x-2"
           >
             <Utensils size={20} />
-            <span>Montar/Incluir refeições do paciente</span>
+            <span>Clique aqui para incluir refeições</span>
           </button>
+
 
           <NutritionSummaryComponent summary={nutritionSummary} />
           
