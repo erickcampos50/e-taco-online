@@ -64,17 +64,17 @@ export const NutritionSummaryComponent = ({
     return (
       <div
         key={nutrient}
-        className={`p-4 rounded-lg ${statusColors[data.status]}`}
+        className={`p-2 rounded-md ${statusColors[data.status]} text-xs`} // Menor padding e fonte
       >
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between mb-1">
           <span className="font-medium">{t(`nutrients.${nutrient}`)}</span>
           {statusIcons[data.status]}
         </div>
-        <div className="text-2xl font-bold mb-1">
+        <div className="text-lg font-semibold mb-1"> {/* Menor tamanho da fonte */}
           {formatValue(data.value)}
           {unit}
         </div>
-        <div className="text-sm opacity-75">
+        <div className="text-xs opacity-70"> {/* Menor tamanho de fonte */}
           {t('nutrition.summary.target')}: {range} {unit}
         </div>
       </div>
@@ -82,11 +82,11 @@ export const NutritionSummaryComponent = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-md shadow-sm p-4 mb-4"> {/* Menor padding e borda arredondada */}
+      <h2 className="text-lg font-semibold text-gray-800 mb-3"> {/* Menor fonte e margem */}
         {t('nutrition.summary.title')}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2"> {/* Ajuste do grid para até 6 colunas */}
         {Object.keys(summary).map(renderNutrient)}
       </div>
     </div>
