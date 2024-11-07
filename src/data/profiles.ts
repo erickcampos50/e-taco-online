@@ -32,7 +32,7 @@ export const profiles = [
   {
     profile: "adult_man",
     energy: { max: 2600 },
-    protein: { max: 91 },
+    protein: { min: 91 },
     lipids: { max: 80 },
     carbohydrates: { max: 325 },
     fiber: { min: 30 },
@@ -63,7 +63,7 @@ export const profiles = [
   {
     profile: "adult_woman",
     energy: { max: 2200 },
-    protein: { max: 75 },
+    protein: { min: 75 },
     lipids: { max: 70 },
     carbohydrates: { max: 275 },
     fiber: { min: 25 },

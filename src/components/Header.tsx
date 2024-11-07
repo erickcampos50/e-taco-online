@@ -69,7 +69,7 @@ export const Header = ({ mealPlan }: HeaderProps) => {
               />
               <button className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 transition-colors">
                 <Upload size={20} />
-                <span className="hidden sm:inline">Importar dados</span>
+                <span className="hidden sm:inline">Abrir prescrição</span>
               </button>
             </div>
             <button
@@ -77,7 +77,7 @@ export const Header = ({ mealPlan }: HeaderProps) => {
               className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 transition-colors"
             >
               <Download size={20} />
-              <span className="hidden sm:inline">Exportar dados</span>
+              <span className="hidden sm:inline">Salvar prescrição</span>
             </button>
             <button
               onClick={handleGenerateReport}
@@ -91,7 +91,7 @@ export const Header = ({ mealPlan }: HeaderProps) => {
               className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 transition-colors"
             >
               <FileSpreadsheet size={20} />
-              <span className="hidden sm:inline">Gerar planilha CSV</span>
+              <span className="hidden sm:inline">Exportar planilha (CSV)</span>
             </button>
           </nav>
         </div>
